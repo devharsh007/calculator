@@ -1,12 +1,8 @@
-/* WHY THE SCREEN DOESNT SHOWING THE VALUE I AM ENTERING 
-PLEASE HELP I CANT SOLVE IT*/
-
-
 
 let  buffer = '0';
 //const screen= document.querySelector('.calc-scr'); //it sets the '.calc-scr' class element to screen (its our output screen )
-const screen = document.querySelector('.calc-scr');
-let runningTotal=0;
+const screen = document.querySelector('.calc-scr');     
+let runningTotal=0;     //showing the total after operation
 let previousOperator=null; // yet to be committed
 
 
@@ -61,7 +57,7 @@ function handleSymbol(symbol){
 
 // we will assigning the buffer value to acreen to show the numbers entered
 function rerender(){    
-    screen.innerText = buffer;
+    screen.value = buffer;
 }; 
 //making function for backarrow
 function backarrow(){
@@ -84,11 +80,11 @@ function handleMath(value){
     }else{
         flushOperation(intbuffer);      //calling a function
     }
-    previousOperator=value;             //....
+    previousOperator=value;             //to remember what was ther previous operator was to add, etc.
     buffer='0';     // setting buffer to 0 so that another operation can also be started
 }   
-function flushOperation(buffer){
-    switch(intbuffer){      //setting the operands for arthmetic operation
+function flushOperation(intbuffer){
+    switch(previousOperator){      //setting the operands for arthmetic operation
         case "+":   
         runningTotal+=parseInt(buffer);         
         break;
@@ -110,8 +106,25 @@ function equals(){
         return;
     }
     flushOperation(parseInt(buffer));       // doing operation after clicking = sign
-    buffer=""+runningTotal; //"" convert a number into a string cz string + num =str
-    runningTotal=0;         // setting total to 0 again for another opration (reseting all values)
     previousOperator = null;    // reseting all values
+    buffer=+runningTotal;   //"" convert a number into a string cz string + num =str
+    runningTotal=0;         // setting total to 0 again for another opration (reseting all values)
 
 }
+
+
+
+
+/* 
+
+This JavaScript code is an implementation of a simple calculator. 
+It has functions to handle numbers and symbols entered by the user and display the results on the screen.
+ The screen is defined as an element with the class '.calc-scr'. 
+ The code sets an event listener on the '.calc-btn' class element for click events, which calls the buttonClick function and passes the target inner text as a parameter. 
+ This function then determines if the value is a symbol or number and calls the respective functions handleSymbol or handleNumber to handle it. 
+ The rerender function updates the value of the screen element with the current value of the buffer variable. 
+ The handleMath function performs arithmetic operations based on the symbol passed as a parameter and the flushOperation function executes the corresponding arithmetic operation. 
+ The equals function performs the calculation when the equal sign (=) is pressed.
+ 
+ 
+ */
