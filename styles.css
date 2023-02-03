@@ -1,0 +1,86 @@
+.container{
+    width: 25rem;
+    height: max-content;
+    margin: 0 auto;
+    border: 2px solid black;
+}
+.calc-scr{
+    width: 98%;
+    font-size: 45px;
+    font-weight: bold;
+    text-align: right;    
+    margin: 0.5px;
+    color: aliceblue;
+    background-color: #000;
+    margin-right: 15px;
+    height: 6rem;
+    border: 1px solid black;
+    font-family: monospace;
+}
+.calc-btn{
+    display: grid;
+    grid-template-areas: 
+    "a a b c"
+    "d e f g"
+    "h i j k"
+    "l m n o "
+    "p p p q"
+    ;
+}
+#a{
+    grid-area: a;
+}
+#b{
+    grid-area: b;
+}
+#c{
+    grid-area: c;
+}
+#d{
+    grid-area: d;
+}
+#e{
+    grid-area: e;
+}
+#f{
+    grid-area: f;
+}
+#g{
+    grid-area: g;
+}
+#h{
+    grid-area: h;
+}
+#i{
+    grid-area: i;
+}
+#j{
+    grid-area: j;
+}
+#k{
+    grid-area: k;
+}
+#l{
+    grid-area: l;
+}
+#m{
+    grid-area: m;
+}
+#n{
+    grid-area: n;
+}
+#o{
+    grid-area: o;
+}
+#p{
+    grid-area: p;
+}
+#q{
+    grid-area: q;
+}
+.btn{
+    height: 6rem;
+    font-size: 25px;
+    border-radius: none;
+    border: 1px solid black;
+}
