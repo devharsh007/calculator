@@ -19,7 +19,6 @@ function buttonClick(value){    //initilising the ffunction
     else{
         handleNumber(value); // if it's  a number, it will call handleNumber() fun 
     }
-    }
     rerender();   
 };
 
