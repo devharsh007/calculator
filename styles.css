@@ -80,7 +80,14 @@
 }
 .btn{
     height: 6rem;
-    font-size: 25px;
+    font-size: 30px;
     border-radius: none;
     border: 1px solid black;
+}
+.color{
+    background-color: rgb(238, 128, 24);
+}
+button:hover{
+    background-color:  rgb(102, 99, 94);
+    ;
 }
